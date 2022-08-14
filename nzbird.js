@@ -16,27 +16,30 @@ fetchPromise
     let select = document.querySelector(".select1");
 
     let temp = document.querySelector(".select2");
+    let conser_holder = [];
+    let search_holder = [];
 
     function search(eventData) {
       // KEEP THIS. It prevents the page from reloading
       eventData.preventDefault();
 
-      console.log("something happened!!!!!!!!!!!!!!");
       let status = select.options[select.selectedIndex].text;
       let sort = temp.options[temp.selectedIndex].text;
       let str = e.value.toLowerCase();
-      let conser_holder = [];
 
       if (status === "ALL" && sort === "Default" && str != "") {
         // only search function
+
         clean();
         console.log(str);
-        // for (i = 0; i < data.length; i++) {
-        //   display(data[i]);
-        // }
+        console.log(search_holder);
         search(data);
+        for (i = 0; i < search_holder.length; i++) {
+          display(search_holder[i]);
+        }
       } else if (status != "ALL" && sort === "Default" && str === "") {
         //only  status function
+
         clean();
         conservation(data);
         for (i = 0; i < conser_holder.length; i++) {
@@ -44,18 +47,27 @@ fetchPromise
         }
       } else if (status === "ALL" && sort != "Default" && str === "") {
         //only sorting function
+
         clean();
         sorting(data);
+        sorting(search_holder);
       } else if (status != "ALL" && sort != "Default" && str === "") {
         clean();
         conservation(data);
         sorting(conser_holder);
-      } else if (status != "ALL" && sort != "DEfault" && str != "") {
+      } else if (status != "ALL" && sort != "Default" && str != "") {
         clean();
         document.querySelector(".select1").selectedIndex = 0;
         document.querySelector(".select2").selectedIndex = 0;
         search(data);
+      } else if (status === "ALL" && sort != "Default" && str != "") {
+        clean();
+        //console.log(45);
+        search(data);
+        //console.log(search_holder);
+        sorting(search_holder);
       } else {
+        clean();
         for (i = 0; i < data.length; i++) {
           display(data[i]);
         }
@@ -65,23 +77,25 @@ fetchPromise
         for (i = 0; i < data.length; i++) {
           // console.log(data[i].other_names.length);
           for (c = 0; c < data[i].other_names.length; c++) {
-            console.log(str === data[i].scientific_name.toLowerCase());
             if (
               str === data[i].other_names[c].toLowerCase() ||
               str === data[i].primary_name.toLowerCase() ||
               str === data[i].english_name.toLowerCase() ||
-              str === data[i].scientific_name.toLowerCase()
+              str === data[i].scientific_name.toLowerCase() ||
+              str === data[i].family.toLowerCase() ||
+              str === data[i].order.toLowerCase()
             ) {
-              console.log(str);
-              display(data[i]);
-              break;
+              //display(data[i]);
+              search_holder.push(data[i]);
             }
+            break;
           }
           if (str === "") {
             display(data[i]);
             //console.log(i);
           }
         }
+        return search_holder;
       }
       async function conservation(data) {
         for (i = 0; i < data.length; i++) {
@@ -97,8 +111,8 @@ fetchPromise
         // }
       }
       async function sorting(data) {
-        console.log(data);
         let new_array = data;
+        //console.log(new_array);
         let f = 0;
         let r = 0;
         if (sort === "Lightest to heaviest") {
@@ -182,24 +196,24 @@ async function display(data) {
   ename.textContent = data.english_name;
   ename.setAttribute("class", "ename");
 
-  family.textContent = "Family: " + data.family;
+  family.textContent = "Family:" + " " + data.family;
   family.setAttribute("class", "family");
 
-  order.textContent = "Order:  " + data.order;
+  order.textContent = "Order:" + " " + data.order;
   order.setAttribute("class", "order");
 
-  status.textContent = "Status    : " + data.status;
+  status.textContent = "Status: " + " " + data.status;
   status.setAttribute("class", "status");
 
   sname.textContent = "Scientific Name: " + data.scientific_name;
   sname.setAttribute("class", "sname");
 
   length.textContent =
-    "Length:" + data.size.length.value + " " + data.size.length.units;
+    "Length:" + " " + data.size.length.value + data.size.length.units;
   length.setAttribute("class", "length");
 
   weight.textContent =
-    "Weight:" + data.size.weight.value + " " + data.size.weight.units;
+    "Weight:" + " " + data.size.weight.value + data.size.weight.units;
   weight.setAttribute("class", "weight");
 
   credit.textContent = data.photo.credit;

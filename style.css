@@ -288,6 +288,7 @@ main{
 }
 
 .sname{
+    word-spacing: 6px;
     position: relative;
     top: -110px;
     font-size: small;
@@ -295,18 +296,21 @@ main{
 }
 
 .family{
+    word-spacing: 60px;
     position: relative;
     top: -125px;
     font-size: small;
         font-weight: lighter;
 }
 .order{
+    word-spacing: 67px;
     position: relative;
     top: -140px; 
     font-size: small;
         font-weight: lighter;
 }
  .status{
+    word-spacing: 30px;
     position: relative;
     top: -155px;
     font-size: small;
@@ -314,13 +318,16 @@ main{
 }
 
 .length{
+    word-spacing: 60px;
     position: relative;
     top: -170px;
     font-size: small;
         font-weight: lighter;
-}
+  
+    }
 
 .weight{
+    word-spacing: 60px;
     position: relative;
     top: -182px;
     font-size: small;
@@ -333,15 +340,17 @@ main{
    align-items: flex-start;
 }
 
-.block > .circle {
+.block > .circle{
+   display: inline-block;
+    vertical-align: bottom;
     position: relative;
-    top: -340px;
+    top: -370px;
     left: 180px;
-    border-radius: 50%;
+   border-radius: 50%;
     border: 2px solid white;
     width: 35px;
     height: 35px;
- }
+        }
 
 
  .toggle {

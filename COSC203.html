@@ -1,0 +1,1334 @@
+<!DOCTYPE html>
+
+<html lang="en-nz">
+  <meta charset="UTF-8" />
+  <title>NZBird</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner&display=swap"
+    rel="stylesheet"
+  />
+   <script defer src="nzbird.js">
+  function openNav(){
+  document.querySelector('sidebar').style.width = "250px";
+  }
+
+  window.addEventListener('click', function(e){
+    if(!document.querySelector("sidebar".contain(e.target) &&  !document.getElementById('myMenu').contains(e.target))){
+      document.querySelector("sidebar").style.width ="0px"
+    } else {}
+  });
+   </script>
+  <link href="style.css" rel="stylesheet" />
+
+  <body>
+    <header>
+      <h1>
+        <img
+          class="icon"
+          src="https://cdn-icons-png.flaticon.com/512/812/812029.png?w=360"
+          alt="bird"
+        />
+        Bird of Aotearoa
+      </h1>
+    </header>
+
+    <div class="sidebar">
+
+      <p class="S1"><strong>Filter Birds</strong></p>
+      <p class="S2">search:</p>
+      <input class="search" type="text" />
+      
+      <p class="S2">conservation status</p>
+      <div >
+        <select class="select1" style="width:230px">
+          <option value="0">ALL</option>
+          <option value="1">Not Threatened </option>
+          <option value="2">Naturally Uncommon</option> 
+          <option value="3">Relict</option> 
+          <option value="4">Recovering</option> 
+          <option value="5">Declining</option> 
+          <option value="6">Nationally Increasing</option> 
+          <option value="7">Nationally Vulnerable</option> 
+          <option value="8">Nationally Endangered</option> 
+          <option value="9">Nationally Critical</option> 
+          <option value="10">Data Deficient</option> 
+        </select>
+      </div> 
+
+      <p class="S2">Sort by</p>
+      <div >
+      <select class="select2" style="width: 230px">
+        <option value="1">Default</option>
+        <option value="2">Lightest to heaviest</option>
+        <option value="3">Shortest to longest</option>
+              </select>
+      </div>
+
+        <button class="filter-result" type="submit" ><strong>FILTER RESULTS </strong></button>
+
+      <p><strong>Conservation Status</strong></p>
+     
+      <dir class="group">
+        <div>
+                 <p class="nt"></p>
+        <p class="sidetext">Not Threatened</p>
+            </div>
+      
+            <div>
+        <p class="nu"></p>
+        <p class="sidetext">Naturally Uncommon</p>
+             </div>
+      
+             <div>
+        <p class="r"></p>
+        <p class="sidetext">Relict</p>
+             </div>
+      
+               <div>
+        <p class="rc"></p>
+        <p class="sidetext">Recovering</p>
+            </div>
+      
+            <div>
+        <p class="d"></p>
+        <p class="sidetext">Declining</p>
+            </div>
+      
+            <div>
+        <p class="ni"></p>
+        <p class="sidetext">Nationally increasing</p>
+            </div>
+    
+            <div>
+        <p class="nv"></p>
+        <p class="sidetext">Nationally Vulnerable</p>
+              </div>
+      
+              <div>
+        <p class="ne""></p>
+        <p class="sidetext">Nationally Endangered</p>
+            </div>
+      
+            <div>
+        <p class="nc"></p>
+        <p class="sidetext">Nationally Critical</p>
+        </div>
+       
+        <div>
+        <p class="dd"></p>
+        <p class="sidetext">Data Deficient</p>
+        </div>
+
+    </dir>
+
+      <p class="side-bar1">
+        Conservation status from<a href="https://www.birdsnz.org.nz/"
+          >DOC website</a> </p>
+      
+
+    </div>
+    <!-- <span style="font-size:30px;cursor:pointer" id="myMenu" onclick="openNav()">&#9776; open</span> -->
+    <main>
+      <div class="main-block">
+
+        <!-- <div class="block">
+          <img class="photo"/>
+          <p class="mName"></p>
+          <p class="credit"></p>
+          <p class="ename"></p>
+          <p class="sname"></p>
+          <p class="family"></p>
+          <p class="order"></p>
+          <p class="status"></p>
+          <p class="length"></p>
+          <p class="weight"></p>
+          <div class="circle"><p></p></div>
+        </div> -->
+
+        <!-- <div class="block">
+          <img
+            class="photo"
+            src="auckland-island-rail-1.jpg"
+            alt="auckland-island-rail-1"
+          />
+           <p class="mName">test</p>
+          <p class="crdit">test</p>
+          <p class="ename">test123</p>
+          <p class="sname">test12</p>
+          <p class="family">family</p>
+          <p class="order">order</p>
+          <p class="status">status</p>
+          <p class="length">length</p>
+          <p class="weight">wight</p>
+          <div class="circle"><p></p></div>
+        </div>
+        <div class="block">
+          <img
+            class="photo"
+            src="auckland-island-shag-14.jpg"
+            alt="auckland-island-shag-14."
+          />
+            <p class="mName">test</p>
+          <p class="crdit">test</p>
+          <p class="ename">test123</p>
+          <p class="sname">test12</p>
+          <p class="family">family</p>
+          <p class="order">order</p>
+          <p class="status">status</p>
+          <p class="length">length</p>
+          <p class="weight">wight</p>
+          <div class="circle"><p></p></div>
+        </div>
+        <div class="block">
+          <img
+            class="photo"
+            src="auckland-island-teal-6.jpg"
+            alt="auckland-island-teal-6"
+          />
+            <p class="mName">test</p>
+          <p class="crdit">test</p>
+          <p class="ename">test123</p>
+          <p class="sname">test12</p>
+          <p class="family">family</p>
+          <p class="order">order</p>
+          <p class="status">status</p>
+          <p class="length">length</p>
+          <p class="weight">wight</p>
+          <div class="circle"><p></p></div>
+        </div>
+        <div class="block">
+          <img
+            class="photo"
+            src="banded-dotterel-3.jpg"
+            alt="banded-dotterel-3"
+          />
+           <p class="mName">test</p>
+          <p class="crdit">test</p>
+          <p class="ename">test123</p>
+          <p class="sname">test12</p>
+          <p class="family">family</p>
+          <p class="order">order</p>
+          <p class="status">status</p>
+          <p class="length">length</p>
+          <p class="weight">wight</p>
+          <div class="circle"><p></p></div>
+        </div>
+        <div class="block">
+          <img class="photo" src="bellbird-4.jpg" alt="bellbird-4" />
+            <p class="mName">test</p>
+          <p class="crdit">test</p>
+          <p class="ename">test123</p>
+          <p class="sname">test12</p>
+          <p class="family">family</p>
+          <p class="order">order</p>
+          <p class="status">status</p>
+          <p class="length">length</p>
+          <p class="weight">wight</p>
+          <div class="circle"><p></p></div>
+        </div>
+        <div class="block">
+          <img
+            class="photo"
+            src="black-billed-gull-5.jpg"
+            alt="black-billed-gull-5"
+          />
+          <p class="mName">test</p>
+          <p class="crdit">test</p>
+          <p class="ename">test123</p>
+          <p class="sname">test12</p>
+          <p class="family">family</p>
+          <p class="order">order</p>
+          <p class="status">status</p>
+          <p class="length">length</p>
+          <p class="weight">wight</p>
+          <div class="circle"><p></p></div>
+        </div>
+        <div class="block">
+          <img
+            class="photo"
+            src="black-fronted-tern-29.jpg"
+            alt="black-fronted-tern-29"
+          />
+            <p class="mName">test</p>
+          <p class="crdit">test</p>
+          <p class="ename">test123</p>
+          <p class="sname">test12</p>
+          <p class="family">family</p>
+          <p class="order">order</p>
+          <p class="status">status</p>
+          <p class="length">length</p>
+          <p class="weight">wight</p>
+          <div class="circle"><p></p></div>
+        </div>
+        <div class="block">
+          <img class="photo" src="black-robin-1.jpg" alt="black-robin-1" />
+            <p class="mName">test</p>
+          <p class="crdit">test</p>
+          <p class="ename">test123</p>
+          <p class="sname">test12</p>
+          <p class="family">family</p>
+          <p class="order">order</p>
+          <p class="status">status</p>
+          <p class="length">length</p>
+          <p class="weight">wight</p>
+          <div class="circle"><p></p></div>
+        </div>
+        <div class="block">
+          <img class="photo" src="black-stilt-4.jpg" alt="black-stilt-4" />
+            <p class="mName">test</p>
+          <p class="crdit">test</p>
+          <p class="ename">test123</p>
+          <p class="sname">test12</p>
+          <p class="family">family</p>
+          <p class="order">order</p>
+          <p class="status">status</p>
+          <p class="length">length</p>
+          <p class="weight">wight</p>
+          <div class="circle"><p></p></div>
+        </div>
+        <div class="block">
+          <img class="photo" src="blue-duck-5.jpg" alt="blue-duck-5" />
+            <p class="mName">test</p>
+          <p class="crdit">test</p>
+          <p class="ename">test123</p>
+          <p class="sname">test12</p>
+          <p class="family">family</p>
+          <p class="order">order</p>
+          <p class="status">status</p>
+          <p class="length">length</p>
+          <p class="weight">wight</p>
+          <div class="circle"><p></p></div>
+        </div>
+        <div class="block">
+          <img
+            class="photo"
+            src="bounty-island-shag-5.jpg"
+            alt="bounty-island-shag-5"
+          />
+           <p class="mName">test</p>
+          <p class="crdit">test</p>
+          <p class="ename">test123</p>
+          <p class="sname">test12</p>
+          <p class="family">family</p>
+          <p class="order">order</p>
+          <p class="status">status</p>
+          <p class="length">length</p>
+          <p class="weight">wight</p>
+          <div class="circle"><p></p></div>
+        </div>
+        <div class="block">
+          <img
+            class="photo"
+            src="brown-creeper-10.jpg"
+            alt="brown-creeper-10."
+          />
+           <p class="mName">test</p>
+          <p class="crdit">test</p>
+          <p class="ename">test123</p>
+          <p class="sname">test12</p>
+          <p class="family">family</p>
+          <p class="order">order</p>
+          <p class="status">status</p>
+          <p class="length">length</p>
+          <p class="weight">wight</p>
+          <div class="circle"><p></p></div>
+        </div>
+        <div class="block">
+          <img class="photo" src="brown-teal-3.jpg" alt="brown-teal-3.jpg" />
+            <p class="mName">test</p>
+          <p class="crdit">test</p>
+          <p class="ename">test123</p>
+          <p class="sname">test12</p>
+          <p class="family">family</p>
+          <p class="order">order</p>
+          <p class="status">status</p>
+          <p class="length">length</p>
+          <p class="weight">wight</p>
+          <div class="circle"><p></p></div>
+        </div>
+        <div class="block">
+          <img
+            class="photo"
+            src="campbell-island-shag-14.jpg"
+            alt="campbell-island-shag-14.jpg"
+          />
+            <p class="mName">test</p>
+          <p class="crdit">test</p>
+          <p class="ename">test123</p>
+          <p class="sname">test12</p>
+          <p class="family">family</p>
+          <p class="order">order</p>
+          <p class="status">status</p>
+          <p class="length">length</p>
+          <p class="weight">wight</p>
+          <div class="circle"><p></p></div>
+        </div>
+        <div class="block">
+          <img
+            class="photo"
+            src="campbell-island-teal-6.jpg"
+            alt="campbell-island-teal-6"
+          />
+           <p class="mName">test</p>
+          <p class="crdit">test</p>
+          <p class="ename">test123</p>
+          <p class="sname">test12</p>
+          <p class="family">family</p>
+          <p class="order">order</p>
+          <p class="status">status</p>
+          <p class="length">length</p>
+          <p class="weight">wight</p>
+          <div class="circle"><p></p></div>
+        </div>
+        <div class="block">
+          <img
+            class="photo"
+            src="chatham-island-oystercatcher-4.jpg"
+            alt="chatham-island-oystercatcher"
+          />
+            <p class="mName">test</p>
+          <p class="crdit">test</p>
+          <p class="ename">test123</p>
+          <p class="sname">test12</p>
+          <p class="family">family</p>
+          <p class="order">order</p>
+          <p class="status">status</p>
+          <p class="length">length</p>
+          <p class="weight">wight</p>
+          <div class="circle"><p></p></div>
+        </div>
+        <div class="block">
+          <img
+            class="photo"
+            src="chatham-island-shag-9.jpg"
+            alt="chatham-island-shag"
+          />
+           <p class="mName">test</p>
+          <p class="crdit">test</p>
+          <p class="ename">test123</p>
+          <p class="sname">test12</p>
+          <p class="family">family</p>
+          <p class="order">order</p>
+          <p class="status">status</p>
+          <p class="length">length</p>
+          <p class="weight">wight</p>
+          <div class="circle"><p></p></div>
+        </div>
+        <div class="block">
+          <img
+            class="photo"
+            src="chatham-island-snipe-3.jpg"
+            alt="chatham-island-snipe-3.jpg"
+          />
+           <p class="mName">test</p>
+          <p class="crdit">test</p>
+          <p class="ename">test123</p>
+          <p class="sname">test12</p>
+          <p class="family">family</p>
+          <p class="order">order</p>
+          <p class="status">status</p>
+          <p class="length">length</p>
+          <p class="weight">wight</p>
+          <div class="circle"><p></p></div>
+        </div>
+        <div class="block">
+          <img
+            class="photo"
+            src="chatham-island-warbler-3.jpg"
+            alt="chatham-island-warbler-3.jpg"
+          />
+            <p class="mName">test</p>
+          <p class="crdit">test</p>
+          <p class="ename">test123</p>
+          <p class="sname">test12</p>
+          <p class="family">family</p>
+          <p class="order">order</p>
+          <p class="status">status</p>
+          <p class="length">length</p>
+          <p class="weight">wight</p>
+          <div class="circle"><p></p></div>
+        </div>
+        <div class="block">
+          <img class="photo" src="fantail-1.jpg" alt="fantail-1.jpg" />
+            <p class="mName">test</p>
+          <p class="crdit">test</p>
+          <p class="ename">test123</p>
+          <p class="sname">test12</p>
+          <p class="family">family</p>
+          <p class="order">order</p>
+          <p class="status">status</p>
+          <p class="length">length</p>
+          <p class="weight">wight</p>
+          <div class="circle"><p></p></div>
+        </div>
+        <div class="block">
+          <img class="photo" src="fernbird-6.jpg" alt="fernbird-6.jpg" />
+            <p class="mName">test</p>
+          <p class="crdit">test</p>
+          <p class="ename">test123</p>
+          <p class="sname">test12</p>
+          <p class="family">family</p>
+          <p class="order">order</p>
+          <p class="status">status</p>
+          <p class="length">length</p>
+          <p class="weight">wight</p>
+          <div class="circle"><p></p></div>
+        </div>
+        <div class="block">
+          <img
+            class="photo"
+            src="fiordland-crested-penguin-25.jpg"
+            alt="fiordland-crested-penguin-25.jpg"
+          />
+           <p class="mName">test</p>
+          <p class="crdit">test</p>
+          <p class="ename">test123</p>
+          <p class="sname">test12</p>
+          <p class="family">family</p>
+          <p class="order">order</p>
+          <p class="status">status</p>
+          <p class="length">length</p>
+          <p class="weight">wight</p>
+          <div class="circle"><p></p></div>
+        </div>
+        <div class="block">
+          <img
+            class="photo"
+            src="great-spotted-kiwi-2.jpg"
+            alt="great-spotted-kiwi-2.jpg"
+          />
+          <p class="mName">test</p>
+          <p class="crdit">test</p>
+          <p class="ename">test123</p>
+          <p class="sname">test12</p>
+          <p class="family">family</p>
+          <p class="order">order</p>
+          <p class="status">status</p>
+          <p class="length">length</p>
+          <p class="weight">wight</p>
+          <div class="circle"><p></p></div>
+        </div>
+        <div class="block">
+          <img
+            class="photo"
+            src="grey-warbler-2.jpg"
+            alt="grey-warbler-2.jpg"
+          />
+           <p class="mName">test</p>
+          <p class="crdit">test</p>
+          <p class="ename">test123</p>
+          <p class="sname">test12</p>
+          <p class="family">family</p>
+          <p class="order">order</p>
+          <p class="status">status</p>
+          <p class="length">length</p>
+          <p class="weight">wight</p>
+          <div class="circle"><p></p></div>
+        </div>
+        <div class="block">
+          <img class="photo" src="kaka-30.jpg" alt="kaka-30.jpg" />
+           <p class="mName">test</p>
+          <p class="crdit">test</p>
+          <p class="ename">test123</p>
+          <p class="sname">test12</p>
+          <p class="family">family</p>
+          <p class="order">order</p>
+          <p class="status">status</p>
+          <p class="length">length</p>
+          <p class="weight">wight</p>
+          <div class="circle"><p></p></div>
+        </div>
+        <div class="block">
+          <img class="photo" src="kakapo-3.jpg" alt="kakapo-3.jpg" />
+            <p class="mName">test</p>
+          <p class="crdit">test</p>
+          <p class="ename">test123</p>
+          <p class="sname">test12</p>
+          <p class="family">family</p>
+          <p class="order">order</p>
+          <p class="status">status</p>
+          <p class="length">length</p>
+          <p class="weight">wight</p>
+          <div class="circle"><p></p></div>
+        </div>
+        <div class="block">
+          <img class="photo" src="kea-13.jpg" alt="kea-13.jpg" />
+           <p class="mName">test</p>
+          <p class="crdit">test</p>
+          <p class="ename">test123</p>
+          <p class="sname">test12</p>
+          <p class="family">family</p>
+          <p class="order">order</p>
+          <p class="status">status</p>
+          <p class="length">length</p>
+          <p class="weight">wight</p>
+          <div class="circle"><p></p></div>
+        </div>
+        <div class="block">
+          <img class="photo" src="king-shag-5.jpg" alt="king-shag-5.jpg" />
+            <p class="mName">test</p>
+          <p class="crdit">test</p>
+          <p class="ename">test123</p>
+          <p class="sname">test12</p>
+          <p class="family">family</p>
+          <p class="order">order</p>
+          <p class="status">status</p>
+          <p class="length">length</p>
+          <p class="weight">wight</p>
+          <div class="circle"><p></p></div>
+        </div>
+        <div class="block">
+          <img
+            class="photo"
+            src="little-penguin-2.jpg"
+            alt="little-penguin-2.jpg"
+          />
+            <p class="mName">test</p>
+          <p class="crdit">test</p>
+          <p class="ename">test123</p>
+          <p class="sname">test12</p>
+          <p class="family">family</p>
+          <p class="order">order</p>
+          <p class="status">status</p>
+          <p class="length">length</p>
+          <p class="weight">wight</p>
+          <div class="circle"><p></p></div>
+        </div>
+        <div class="block">
+          <img
+            class="photo"
+            src="little-spotted-kiwi-9.jpg"
+            alt="little-spotted-kiwi-9.jpg"
+          />
+           <p class="mName">test</p>
+          <p class="crdit">test</p>
+          <p class="ename">test123</p>
+          <p class="sname">test12</p>
+          <p class="family">family</p>
+          <p class="order">order</p>
+          <p class="status">status</p>
+          <p class="length">length</p>
+          <p class="weight">wight</p>
+          <div class="circle"><p></p></div>
+        </div>
+        <div class="block">
+          <img
+            class="photo"
+            src="long-tailed-cuckoo-1.jpg"
+            alt="long-tailed-cuckoo-1.jpg"
+          />
+           <p class="mName">test</p>
+          <p class="crdit">test</p>
+          <p class="ename">test123</p>
+          <p class="sname">test12</p>
+          <p class="family">family</p>
+          <p class="order">order</p>
+          <p class="status">status</p>
+          <p class="length">length</p>
+          <p class="weight">wight</p>
+          <div class="circle"><p></p></div>
+        </div>
+        <div class="block">
+          <img class="photo" src="morepork-3.jpg" alt="morepork-3.jpg" />
+           <p class="mName">test</p>
+          <p class="crdit">test</p>
+          <p class="ename">test123</p>
+          <p class="sname">test12</p>
+          <p class="family">family</p>
+          <p class="order">order</p>
+          <p class="status">status</p>
+          <p class="length">length</p>
+          <p class="weight">wight</p>
+          <div class="circle"><p></p></div>
+        </div>
+        <div class="block">
+          <img
+            class="photo"
+            src="new-zealand-dotterel-1.jpg"
+            alt="new-zealand-dotterel-1.jpg"
+          />
+            <p class="mName">test</p>
+          <p class="crdit">test</p>
+          <p class="ename">test123</p>
+          <p class="sname">test12</p>
+          <p class="family">family</p>
+          <p class="order">order</p>
+          <p class="status">status</p>
+          <p class="length">length</p>
+          <p class="weight">wight</p>
+          <div class="circle"><p></p></div>
+        </div>
+        <div class="block">
+          <img
+            class="photo"
+            src="new-zealand-falcon-9.jpg"
+            alt="new-zealand-falcon-9.jpg"
+          />
+            <p class="mName">test</p>
+          <p class="crdit">test</p>
+          <p class="ename">test123</p>
+          <p class="sname">test12</p>
+          <p class="family">family</p>
+          <p class="order">order</p>
+          <p class="status">status</p>
+          <p class="length">length</p>
+          <p class="weight">wight</p>
+          <div class="circle"><p></p></div>
+        </div>
+        <div class="block">
+          <img
+            class="photo"
+            src="new-zealand-pigeon-1.jpg"
+            alt="new-zealand-pigeon-1.jpg"
+          />
+            <p class="mName">test</p>
+          <p class="crdit">test</p>
+          <p class="ename">test123</p>
+          <p class="sname">test12</p>
+          <p class="family">family</p>
+          <p class="order">order</p>
+          <p class="status">status</p>
+          <p class="length">length</p>
+          <p class="weight">wight</p>
+          <div class="circle"><p></p></div>
+        </div>
+        <div class="block">
+          <img
+            class="photo"
+            src="new-zealand-pipit-2.jpg"
+            alt="new-zealand-pipit-2.jpg"
+          />
+           <p class="mName">test</p>
+          <p class="crdit">test</p>
+          <p class="ename">test123</p>
+          <p class="sname">test12</p>
+          <p class="family">family</p>
+          <p class="order">order</p>
+          <p class="status">status</p>
+          <p class="length">length</p>
+          <p class="weight">wight</p>
+          <div class="circle"><p></p></div>
+        </div>
+        <div class="block">
+          <img
+            class="photo"
+            src="new-zealand-scaup-2.jpg"
+            alt="new-zealand-scaup-2.jpg"
+          />
+            <p class="mName">test</p>
+          <p class="crdit">test</p>
+          <p class="ename">test123</p>
+          <p class="sname">test12</p>
+          <p class="family">family</p>
+          <p class="order">order</p>
+          <p class="status">status</p>
+          <p class="length">length</p>
+          <p class="weight">wight</p>
+          <div class="circle"><p></p></div>
+        </div>
+        <div class="block">
+          <img
+            class="photo"
+            src="north-island-brown-kiwi-1.jpg"
+            alt="north-island-brown-kiwi-1.jpg"
+          />
+            <p class="mName">test</p>
+          <p class="crdit">test</p>
+          <p class="ename">test123</p>
+          <p class="sname">test12</p>
+          <p class="family">family</p>
+          <p class="order">order</p>
+          <p class="status">status</p>
+          <p class="length">length</p>
+          <p class="weight">wight</p>
+          <div class="circle"><p></p></div>
+        </div>
+        <div class="block">
+          <img
+            class="photo"
+            src="north-island-kokako-5.jpg"
+            alt="north-island-kokako-5.jpg"
+          />
+            <p class="mName">test</p>
+          <p class="crdit">test</p>
+          <p class="ename">test123</p>
+          <p class="sname">test12</p>
+          <p class="family">family</p>
+          <p class="order">order</p>
+          <p class="status">status</p>
+          <p class="length">length</p>
+          <p class="weight">wight</p>
+          <div class="circle"><p></p></div>
+        </div>
+        <div class="block">
+          <img
+            class="photo"
+            src="north-island-robin-7.jpg"
+            alt="north-island-robin-7.jpg"
+          />
+            <p class="mName">test</p>
+          <p class="crdit">test</p>
+          <p class="ename">test123</p>
+          <p class="sname">test12</p>
+          <p class="family">family</p>
+          <p class="order">order</p>
+          <p class="status">status</p>
+          <p class="length">length</p>
+          <p class="weight">wight</p>
+          <div class="circle"><p></p></div>
+        </div>
+        <div class="block">
+          <img
+            class="photo"
+            src="north-island-saddleback-11.jpg"
+            alt="north-island-saddleback-11.jpg"
+          />
+            <p class="mName">test</p>
+          <p class="crdit">test</p>
+          <p class="ename">test123</p>
+          <p class="sname">test12</p>
+          <p class="family">family</p>
+          <p class="order">order</p>
+          <p class="status">status</p>
+          <p class="length">length</p>
+          <p class="weight">wight</p>
+          <div class="circle"><p></p></div>
+        </div>
+        <div class="block">
+          <img
+            class="photo"
+            src="okarito-brown-kiwi-1.jpg"
+            alt="okarito-brown-kiwi-1.jpg"
+          />
+            <p class="mName">test</p>
+          <p class="crdit">test</p>
+          <p class="ename">test123</p>
+          <p class="sname">test12</p>
+          <p class="family">family</p>
+          <p class="order">order</p>
+          <p class="status">status</p>
+          <p class="length">length</p>
+          <p class="weight">wight</p>
+          <div class="circle"><p></p></div>
+        </div>
+        <div class="block">
+          <img
+            class="photo"
+            src="orange-fronted-parakeet-6.jpg"
+            alt="orange-fronted-parakeet-6.jpg"
+          />
+           <p class="mName">test</p>
+          <p class="crdit">test</p>
+          <p class="ename">test123</p>
+          <p class="sname">test12</p>
+          <p class="family">family</p>
+          <p class="order">order</p>
+          <p class="status">status</p>
+          <p class="length">length</p>
+          <p class="weight">wight</p>
+          <div class="circle"><p></p></div>
+        </div>
+        <div class="block">
+          <img
+            class="photo"
+            src="paradise-shelduck-12.jpg"
+            alt="paradise-shelduck-12.jpg"
+          />
+            <p class="mName">test</p>
+          <p class="crdit">test</p>
+          <p class="ename">test123</p>
+          <p class="sname">test12</p>
+          <p class="family">family</p>
+          <p class="order">order</p>
+          <p class="status">status</p>
+          <p class="length">length</p>
+          <p class="weight">wight</p>
+          <div class="circle"><p></p></div>
+        </div>
+        <div class="block">
+          <img
+            class="photo"
+            src="pitt-island-shag-6.jpg"
+            alt="itt-island-shag"
+          />
+         <p class="mName">test</p>
+          <p class="crdit">test</p>
+          <p class="ename">test123</p>
+          <p class="sname">test12</p>
+          <p class="family">family</p>
+          <p class="order">order</p>
+          <p class="status">status</p>
+          <p class="length">length</p>
+          <p class="weight">wight</p>
+          <div class="circle"><p></p></div>
+        </div>
+        <div class="block">
+          <img class="photo" src="pukeko-8.jpg" alt="pukeko-8.jpg" />
+           <p class="mName">test</p>
+          <p class="crdit">test</p>
+          <p class="ename">test123</p>
+          <p class="sname">test12</p>
+          <p class="family">family</p>
+          <p class="order">order</p>
+          <p class="status">status</p>
+          <p class="length">length</p>
+          <p class="weight">wight</p>
+          <div class="circle"><p></p></div>
+        </div>
+        <div class="block">
+          <img
+            class="photo"
+            src="red-billed-gull-25.jpg"
+            alt="red-billed-gull-25.jpg"
+          />
+            <p class="mName">test</p>
+          <p class="crdit">test</p>
+          <p class="ename">test123</p>
+          <p class="sname">test12</p>
+          <p class="family">family</p>
+          <p class="order">order</p>
+          <p class="status">status</p>
+          <p class="length">length</p>
+          <p class="weight">wight</p>
+          <div class="circle"><p></p></div>
+        </div>
+        <div class="block">
+          <img class="photo" src="rifleman-13.jpg" alt="rifleman-13.jpg" />
+            <p class="mName">test</p>
+          <p class="crdit">test</p>
+          <p class="ename">test123</p>
+          <p class="sname">test12</p>
+          <p class="family">family</p>
+          <p class="order">order</p>
+          <p class="status">status</p>
+          <p class="length">length</p>
+          <p class="weight">wight</p>
+          <div class="circle"><p></p></div>
+        </div>
+        <div class="block">
+          <img class="photo" src="rock-wren-3.jpg" alt="rock-wren-3.jpg" />
+            <p class="mName">test</p>
+          <p class="crdit">test</p>
+          <p class="ename">test123</p>
+          <p class="sname">test12</p>
+          <p class="family">family</p>
+          <p class="order">order</p>
+          <p class="status">status</p>
+          <p class="length">length</p>
+          <p class="weight">wight</p>
+          <div class="circle"><p></p></div>
+        </div>
+        <div class="block">
+          <img
+            class="photo"
+            src="sacred-kingfisher-4.jpg"
+            alt="sacred-kingfisher-4.jpg"
+          />
+           <p class="mName">test</p>
+          <p class="crdit">test</p>
+          <p class="ename">test123</p>
+          <p class="sname">test12</p>
+          <p class="family">family</p>
+          <p class="order">order</p>
+          <p class="status">status</p>
+          <p class="length">length</p>
+          <p class="weight">wight</p>
+          <div class="circle"><p></p></div>
+        </div>
+        <div class="block">
+          <img
+            class="photo"
+            src="shore-plover-1.jpg"
+            alt="shore-plover-1.jpg"
+          />
+            <p class="mName">test</p>
+          <p class="crdit">test</p>
+          <p class="ename">test123</p>
+          <p class="sname">test12</p>
+          <p class="family">family</p>
+          <p class="order">order</p>
+          <p class="status">status</p>
+          <p class="length">length</p>
+          <p class="weight">wight</p>
+          <div class="circle"><p></p></div>
+        </div>
+        <div class="block">
+          <img class="photo" src="silvereye-1.jpg" alt="silvereye-1.jpg" />
+            <p class="mName">test</p>
+          <p class="crdit">test</p>
+          <p class="ename">test123</p>
+          <p class="sname">test12</p>
+          <p class="family">family</p>
+          <p class="order">order</p>
+          <p class="status">status</p>
+          <p class="length">length</p>
+          <p class="weight">wight</p>
+          <div class="circle"><p></p></div>
+        </div>
+        <div class="block">
+          <img
+            class="photo"
+            src="snares-island-snipe-5.jpg"
+            alt="snares-island-snipe-5.jpg"
+          />
+            <p class="mName">test</p>
+          <p class="crdit">test</p>
+          <p class="ename">test123</p>
+          <p class="sname">test12</p>
+          <p class="family">family</p>
+          <p class="order">order</p>
+          <p class="status">status</p>
+          <p class="length">length</p>
+          <p class="weight">wight</p>
+          <div class="circle"><p></p></div>
+        </div>
+        <div class="block">
+          <img
+            class="photo"
+            src="south-island-kokako-2.jpg"
+            alt="south-island-kokako-2.jpg"
+          />
+            <p class="mName">test</p>
+          <p class="crdit">test</p>
+          <p class="ename">test123</p>
+          <p class="sname">test12</p>
+          <p class="family">family</p>
+          <p class="order">order</p>
+          <p class="status">status</p>
+          <p class="length">length</p>
+          <p class="weight">wight</p>
+          <div class="circle"><p></p></div>
+        </div>
+        <div class="block">
+          <img
+            class="photo"
+            src="south-island-pied-oystercatcher-1.jpg"
+            alt="south-island-pied-oystercatcher-1.jpg"
+          />
+            <p class="mName">test</p>
+          <p class="crdit">test</p>
+          <p class="ename">test123</p>
+          <p class="sname">test12</p>
+          <p class="family">family</p>
+          <p class="order">order</p>
+          <p class="status">status</p>
+          <p class="length">length</p>
+          <p class="weight">wight</p>
+          <div class="circle"><p></p></div>
+        </div>
+        <div class="block">
+          <img
+            class="photo"
+            src="south-island-robin-7.jpg"
+            alt="south-island-robin-7.jpg"
+          />
+            <p class="mName">test</p>
+          <p class="crdit">test</p>
+          <p class="ename">test123</p>
+          <p class="sname">test12</p>
+          <p class="family">family</p>
+          <p class="order">order</p>
+          <p class="status">status</p>
+          <p class="length">length</p>
+          <p class="weight">wight</p>
+          <div class="circle"><p></p></div>
+        </div>
+        <div class="block">
+          <img
+            class="photo"
+            src="south-island-saddleback-1.jpg"
+            alt="south-island-saddleback-1.jpg"
+          />
+            <p class="mName">test</p>
+          <p class="crdit">test</p>
+          <p class="ename">test123</p>
+          <p class="sname">test12</p>
+          <p class="family">family</p>
+          <p class="order">order</p>
+          <p class="status">status</p>
+          <p class="length">length</p>
+          <p class="weight">wight</p>
+          <div class="circle"><p></p></div>
+        </div>
+        <div class="block">
+          <img
+            class="photo"
+            src="southern-brown-kiwi-5.jpg"
+            alt="southern-brown-kiwi-5.jpg"
+          />
+            <p class="mName">test</p>
+          <p class="crdit">test</p>
+          <p class="ename">test123</p>
+          <p class="sname">test12</p>
+          <p class="family">family</p>
+          <p class="order">order</p>
+          <p class="status">status</p>
+          <p class="length">length</p>
+          <p class="weight">wight</p>
+          <div class="circle"><p></p></div>
+        </div>
+        <div class="block">
+          <img
+            class="photo"
+            src="southern-royal-albatross-3.jpg"
+            alt="southern-royal-albatross-3.jpg"
+          />
+           <p class="mName">test</p>
+          <p class="crdit">test</p>
+          <p class="ename">test123</p>
+          <p class="sname">test12</p>
+          <p class="family">family</p>
+          <p class="order">order</p>
+          <p class="status">status</p>
+          <p class="length">length</p>
+          <p class="weight">wight</p>
+          <div class="circle"><p></p></div>
+        </div>
+        <div class="block">
+          <img
+            class="photo"
+            src="spotted-shag-12.jpg"
+            alt="spotted-shag-12.jpg"
+          />
+            <p class="mName">test</p>
+          <p class="crdit">test</p>
+          <p class="ename">test123</p>
+          <p class="sname">test12</p>
+          <p class="family">family</p>
+          <p class="order">order</p>
+          <p class="status">status</p>
+          <p class="length">length</p>
+          <p class="weight">wight</p>
+          <div class="circle"><p></p></div>
+        </div>
+        <div class="block">
+          <img
+            class="photo"
+            src="stewart-island-shag-1.jpg"
+            alt="stewart-island-shag-1.jpg"
+          />
+          <p class="mName">test</p>
+          <p class="crdit">test</p>
+          <p class="ename">test123</p>
+          <p class="sname">test12</p>
+          <p class="family">family</p>
+          <p class="order">order</p>
+          <p class="status">status</p>
+          <p class="length">length</p>
+          <p class="weight">wight</p>
+          <div class="circle"><p></p></div>
+        </div>
+        <div class="block">
+          <img class="photo" src="stitchbird-2.jpg" alt="stitchbird-2.jpg" />
+        <p class="mName">test</p>
+          <p class="crdit">test</p>
+          <p class="ename">test123</p>
+          <p class="sname">test12</p>
+          <p class="family">family</p>
+          <p class="order">order</p>
+          <p class="status">status</p>
+          <p class="length">length</p>
+          <p class="weight">wight</p>
+          <div class="circle"><p></p></div>
+        </div>
+        <div class="block">
+          <img
+            class="photo"
+            src="subantarctic-snipe-12.jpg"
+            alt="subantarctic-snipe-12.jpg"
+          />
+            <p class="mName">test</p>
+          <p class="crdit">test</p>
+          <p class="ename">test123</p>
+          <p class="sname">test12</p>
+          <p class="family">family</p>
+          <p class="order">order</p>
+          <p class="status">status</p>
+          <p class="length">length</p>
+          <p class="weight">wight</p>
+          <div class="circle"><p></p></div>
+        </div>
+        <div class="block">
+          <img class="photo" src="takahe-31.jpg" alt="takahe-31.jpg" />
+            <p class="mName">test</p>
+          <p class="crdit">test</p>
+          <p class="ename">test123</p>
+          <p class="sname">test12</p>
+          <p class="family">family</p>
+          <p class="order">order</p>
+          <p class="status">status</p>
+          <p class="length">length</p>
+          <p class="weight">wight</p>
+          <div class="circle"><p></p></div>
+        </div>
+        <div class="block">
+          <img class="photo" src="tomtit-1.jpg" alt="tomtit-1.jpg" />
+            <p class="mName">test</p>
+          <p class="crdit">test</p>
+          <p class="ename">test123</p>
+          <p class="sname">test12</p>
+          <p class="family">family</p>
+          <p class="order">order</p>
+          <p class="status">status</p>
+          <p class="length">length</p>
+          <p class="weight">wight</p>
+          <div class="circle"><p></p></div>
+        </div>
+        <div class="block">
+          <img class="photo" src="tui-2.jpg" alt="tui-2.jpg" />
+            <p class="mName">test</p>
+          <p class="crdit">test</p>
+          <p class="ename">test123</p>
+          <p class="sname">test12</p>
+          <p class="family">family</p>
+          <p class="order">order</p>
+          <p class="status">status</p>
+          <p class="length">length</p>
+          <p class="weight">wight</p>
+          <div class="circle"><p></p></div>
+        </div>
+        <div class="block">
+          <img
+            class="photo"
+            src="variable-oystercatcher-5.jpg"
+            alt="variable-oystercatcher-5.jpg"
+          />
+            <p class="mName">test</p>
+          <p class="crdit">test</p>
+          <p class="ename">test123</p>
+          <p class="sname">test12</p>
+          <p class="family">family</p>
+          <p class="order">order</p>
+          <p class="status">status</p>
+          <p class="length">length</p>
+          <p class="weight">wight</p>
+          <div class="circle"><p></p></div>
+        </div>
+        <div class="block">
+          <img class="photo" src="weka-2.jpg" alt="weka-2.jpg" />
+           <p class="mName">test</p>
+          <p class="crdit">test</p>
+          <p class="ename">test123</p>
+          <p class="sname">test12</p>
+          <p class="family">family</p>
+          <p class="order">order</p>
+          <p class="status">status</p>
+          <p class="length">length</p>
+          <p class="weight">wight</p>
+          <div class="circle"><p></p></div>
+        </div>
+        <div class="block">
+          <img
+            class="photo"
+            src="white-faced-heron-1.jpg"
+            alt="white-faced-heron-1.jpg"
+          />
+  <p class="mName">test</p>
+          <p class="crdit">test</p>
+          <p class="ename">test123</p>
+          <p class="sname">test12</p>
+          <p class="family">family</p>
+          <p class="order">order</p>
+          <p class="status">status</p>
+          <p class="length">length</p>
+          <p class="weight">wight</p>
+          <div class="circle"><p></p></div>  
+        </div>
+        <div class="block">
+          <img class="photo" src="white-heron-5.jpg" alt="white-heron-5.jpg" />
+            <p class="mName">test</p>
+          <p class="crdit">test</p>
+          <p class="ename">test123</p>
+          <p class="sname">test12</p>
+          <p class="family">family</p>
+          <p class="order">order</p>
+          <p class="status">status</p>
+          <p class="length">length</p>
+          <p class="weight">wight</p>
+          <div class="circle"><p></p></div>
+        </div>
+        <div class="block">
+          <img class="photo" src="whitehead-4.jpg" alt="whitehead-4.jpg" />
+            <p class="mName">test</p>
+          <p class="crdit">test</p>
+          <p class="ename">test123</p>
+          <p class="sname">test12</p>
+          <p class="family">family</p>
+          <p class="order">order</p>
+          <p class="status">status</p>
+          <p class="length">length</p>
+          <p class="weight">wight</p>
+          <div class="circle"><p></p></div>
+        </div>
+        <div class="block">
+          <img class="photo" src="wrybill-11.jpg" alt="wrybill-11.jpg" />
+            <p class="mName">test</p>
+          <p class="crdit">test</p>
+          <p class="ename">test123</p>
+          <p class="sname">test12</p>
+          <p class="family">family</p>
+          <p class="order">order</p>
+          <p class="status">status</p>
+          <p class="length">length</p>
+          <p class="weight">wight</p>
+          <div class="circle"><p></p></div>
+        </div>
+        <div class="block">
+          <img
+            class="photo"
+            src="yellow-crowned-parakeet-11.jpg"
+            alt="yellow-crowned-parakeet-11.jpg"
+          />
+            <p class="mName">test</p>
+          <p class="crdit">test</p>
+          <p class="ename">test123</p>
+          <p class="sname">test12</p>
+          <p class="family">family</p>
+          <p class="order">order</p>
+          <p class="status">status</p>
+          <p class="length">length</p>
+          <p class="weight">wight</p>
+          <div class="circle"><p></p></div>
+        </div>
+        <div class="block">
+          <img
+            class="photo"
+            src="yellow-eyed-penguin-2.jpg"
+            alt="yellow-eyed-penguin-2.jpg"
+          />
+            <p class="mName">test</p>
+          <p class="crdit">test</p>
+          <p class="ename">test123</p>
+          <p class="sname">test12</p>
+          <p class="family">family</p>
+          <p class="order">order</p>
+          <p class="status">status</p>
+          <p class="length">length</p>
+          <p class="weight">wight</p>
+          <div class="circle"><p></p></div>
+        </div>
+        <div class="block">
+          <img class="photo" src="yellowhead-1.jpg" alt="yellowhead-1.jpg" />
+            <p class="mName">test</p>
+          <p class="crdit">test</p>
+          <p class="ename">test123</p>
+          <p class="sname">test12</p>
+          <p class="family">family</p>
+          <p class="order">order</p>
+          <p class="status">status</p>
+          <p class="length">length</p>
+          <p class="weight">wight</p>
+          <div class="circle"><p></p></div>
+        </div>
+      </div> -->
+    </main>
+
+    <footer class="bot">
+      <p>
+        Data Licensed From
+        <a href="https://www.birdsnz.org.nz/">Brides New Zealand</a> for
+        educational use with the University of Otago
+      </p>
+    </footer>
+  </body>
+</html>
